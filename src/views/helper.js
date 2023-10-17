@@ -1,5 +1,5 @@
 export const getUserData = async () => {
-  return await fetch("http://localhost:4000/", {
+  return await fetch("https://gccp-mpstme-shirpur-api.up.railway.app/", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
