@@ -1,5 +1,5 @@
 export const getUserData = async () => {
-  return await fetch("https://gdsc-mpstme-leaderboard-api.herokuapp.com/", {
+  return await fetch("http://localhost:4000/", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

@@ -3,11 +3,9 @@ import AppBar from "./Appbar";
 import GoldDataGrid from "./goldDataTable";
 import SilverDataGrid from "./silverDataTable";
 import BronzeDataGrid from "./bronzeDataTable";
-import UnrankedDataGrid from "./unrankedDataTable";
 import Footer from "./footer";
 import image from "../assets/GDSCHeader.JPG";
 import {
-  Avatar,
   Box,
   Card,
   CardActions,
@@ -17,10 +15,8 @@ import {
   Typography,
   Tabs,
   Tab,
-  Grid,
 } from "@mui/material";
 import {
-  GitHub,
   Instagram,
   LinkedIn,
   MenuBook,
@@ -67,23 +63,36 @@ const Index = () => {
         <CardContent style={{ margin: "auto" }}>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <Button
-              sx={{ mx: 2, width: 250 }}
+              sx={{ mx: 3, width: 200 }}
               variant="outlined"
               color="primary"
-              href="https://events.withgoogle.com/30daysofgooglecloud/program-syllabus/#content"
+              href="https://www.cloudskillsboost.google/journeys/36
+              "
             >
-              <MenuBook sx={{ mx: 2 }} />
+              <MenuBook sx={{ mx: 3 }} />
               <Typography gutterBottom variant="button">
-                Program Syllabus
+                GCCF Pathway
               </Typography>
             </Button>
             <Button
-              sx={{ mx: 2, width: 250 }}
+              sx={{ mx: 3, width: 200 }}
+              variant="outlined"
+              color="primary"
+              href="https://www.cloudskillsboost.google/games/4518?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade23-october-level3"
+            >
+              <MenuBook sx={{ mx: 3 }} />
+              <Typography gutterBottom variant="button">
+                Gen AI Pathway
+              </Typography>
+            </Button>
+            <Button
+              sx={{ mx: 3, width: 250 }}
               variant="contained"
               color="primary"
               href="mailto:gdscmpstme.shirpur@gmail.com"
             >
-              <SupervisedUserCircle />
+              <SupervisedUserCircle sx={{ marginRight: 2 }} />{" "}
+              {/* Add margin-right to the icon */}
               <Typography gutterBottom variant="button">
                 Contact Us
               </Typography>
@@ -132,10 +141,18 @@ const Index = () => {
             margin: "10px",
           }}
         >
-          <Button size="small" color="primary" href="https://www.instagram.com/gdsc.mpstmeshirpur/">
+          <Button
+            size="small"
+            color="primary"
+            href="https://www.instagram.com/gdsc.mpstmeshirpur/"
+          >
             <Instagram />
           </Button>
-          <Button size="small" color="primary" href="https://www.linkedin.com/company/gdsc-mpstme-shirpur/">
+          <Button
+            size="small"
+            color="primary"
+            href="https://www.linkedin.com/company/gdsc-mpstme-shirpur/"
+          >
             <LinkedIn />
           </Button>
         </CardActions>

@@ -14,17 +14,20 @@ const columns = [
   { id: "Student Name", label: "Student Name", minWidth: 170 },
   { id: "Enrolment Status", label: "Enrolment Status", minWidth: 100 },
   {
-    id: "# of Skill Badges Completed in Track 1",
-    label: "# of Skill Badges Completed in Track 1",
+    id: "# of GenAI Game Completed",
+    label: "GenAI Game Completed",
   },
   {
-    id: "# of Skill Badges Completed in Track 2",
-    label: "# of Skill Badges Completed in Track 2",
+    id: "# of Skill Badges Completed",
+    label: "Skill Badges Completed in GCCF ",
   },
-  { id: "Total Quest", label: "Total Quest" },
   {
-    id: "Google Cloud Skills Boost (previously Qwiklabs) Profile URL",
-    label: "Profile URL",
+    id: "# of Courses Completed",
+    label: " No. of Courses Completed",
+  },
+  {
+    id: "Total Completions of both Pathways",
+    label: "Total Completions of both Pathways",
   },
 ];
 // var rows = [];
@@ -55,9 +58,9 @@ export default function StickyHeadTable() {
         createData(
           value["Student Name"],
           value["Enrolment Status"],
-          value["# of Skill Badges Completed in Track 1"],
-          value["# of Skill Badges Completed in Track 2"],
-          value["Google Cloud Skills Boost (previously Qwiklabs) Profile URL"]
+          value["# of GenAI Game Completed"], //# of Skill Badges Completed in Track 1
+          value["# of Skill Badges Completed"], //# of Skill Badges Completed in Track 2
+          value["Total Completions of both Pathways"]
         )
       );
     });

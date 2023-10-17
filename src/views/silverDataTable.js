@@ -14,14 +14,21 @@ const columns = [
   { id: "Student Name", label: "Student Name", minWidth: 170 },
   { id: "Enrolment Status", label: "Enrolment Status", minWidth: 100 },
   {
-    id: "# of Skill Badges Completed in Track 1",
-    label: "Skill Badges Completed in Track 1",
+    id: "# of GenAI Game Completed",
+    label: "GenAI Game Completed",
   },
   {
-    id: "# of Skill Badges Completed in Track 2",
-    label: "Skill Badges Completed in Track 2",
+    id: "# of Skill Badges Completed",
+    label: "Skill Badges Completed in GCCF ",
   },
-  { id: "Total Quest", label: "Total Quest" },
+  {
+    id: "# of Courses Completed",
+    label: " No. of Courses Completed",
+  },
+  {
+    id: "Total Completions of both Pathways",
+    label: "Total Completions of both Pathways",
+  },
 ];
 
 export default function StickyHeadTable() {
@@ -30,16 +37,46 @@ export default function StickyHeadTable() {
   const [userData, setUserData] = useState([]);
   const [rows, setRows] = useState([]);
 
-  function createData(name, status, track1, track2, url) {
-    var total = parseInt(track1) + parseInt(track2);
-    return [name, status, track1, track2, url, total];
+  function createData(
+    name,
+    status,
+    GenAItrack,
+    GCCFtrack,
+    coursecomplete,
+    pathwaycomplete
+  ) {
+    //var total = parseInt(track1) + parseInt(track2);
+    console.log(
+      name,
+      status,
+      GenAItrack,
+      GCCFtrack,
+      coursecomplete,
+      pathwaycomplete
+    );
+    //console.log(total);
+    return [
+      name,
+      status,
+      GenAItrack,
+      GCCFtrack,
+      coursecomplete,
+      pathwaycomplete,
+    ];
   }
 
   const preload = async () => {
-    await getUserData().then((data) => {
+    // await getUserData().then((data) => {
+    //   pushData(data);
+    //   setUserData(data);
+    // });
+    try {
+      const data = await getUserData();
       pushData(data);
       setUserData(data);
-    });
+    } catch (error) {
+      // Handle error, by logging it or showing an error message.
+    }
   };
   useEffect(() => {
     preload();
@@ -51,8 +88,10 @@ export default function StickyHeadTable() {
         createData(
           value["Student Name"],
           value["Enrolment Status"],
-          value["# of Skill Badges Completed in Track 1"],
-          value["# of Skill Badges Completed in Track 2"]
+          value["# of GenAI Game Completed"], //# of Skill Badges Completed in Track 1
+          value["# of Skill Badges Completed"], //# of Skill Badges Completed in Track 2
+          value["# of Courses Completed"],
+          value["Total Completions of both Pathways"]
         )
       );
     });
@@ -69,12 +108,13 @@ export default function StickyHeadTable() {
 
   return (
     <Paper sx={{ width: "100%", overflow: "hidden" }}>
-      <TableContainer >
+      <TableContainer>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
               {columns.map((column) => (
-                <TableCell align="center"
+                <TableCell
+                  align="center"
                   key={column.id}
                   style={{ fontWeight: "bold", fontSize: "1rem" }}
                 >
@@ -94,6 +134,7 @@ export default function StickyHeadTable() {
                     <TableCell align="center">{row[1]}</TableCell>
                     <TableCell align="center">{row[2]}</TableCell>
                     <TableCell align="center">{row[3]}</TableCell>
+                    <TableCell align="center">{row[4]}</TableCell>
                     <TableCell align="center">{row[5]}</TableCell>
                   </TableRow>
                 );
