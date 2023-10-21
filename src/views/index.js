@@ -67,7 +67,7 @@ const Index = () => {
               variant="outlined"
               color="primary"
               href="https://www.cloudskillsboost.google/journeys/36
-              "
+              " target="_blank"
             >
               <MenuBook sx={{ mx: 3 }} />
               <Typography gutterBottom variant="button">
@@ -79,6 +79,7 @@ const Index = () => {
               variant="outlined"
               color="primary"
               href="https://www.cloudskillsboost.google/games/4518?utm_source=qwiklabs&utm_medium=lp&utm_campaign=arcade23-october-level3"
+                target="_blank"
             >
               <MenuBook sx={{ mx: 3 }} />
               <Typography gutterBottom variant="button">
